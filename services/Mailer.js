@@ -4,7 +4,6 @@ const keys = require('../config/keys');
 class Mailer {
     constructor({ subject, recipients }, content) {
         sgMail.setApiKey(keys.sendGridKey);
-        console.log(recipients);
         this.msg = {
             to: recipients.map(({ email }) => email),
             from: 'igor89.or@gmail.com',
